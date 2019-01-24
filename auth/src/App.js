@@ -49,7 +49,7 @@ class App extends Component {
     render() {
         return(
             <View>
-                <Header headerText="Authentication" />
+                <Header headerText="Authentication Demo" />
                         {this.renderContent()}
             </View>
         )
@@ -61,7 +61,7 @@ const styles = {
         padding: 100,
     },
     imageStyle: {
-        height: 400,
+        height: 300,
         flex: 1,
         width: null
     }
