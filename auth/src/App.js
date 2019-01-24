@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, Image} from 'react-native';
 import {Header, Button, Card, CardSection, Spinner} from './components/common';
 import firebase from '@firebase/app';
 import '@firebase/auth'
@@ -28,7 +28,16 @@ class App extends Component {
     renderContent() {
         switch (this.state.loggedIn){
             case true: 
-                return <Card><CardSection><Button>Test</Button></CardSection></Card>
+                return(
+                    <Card>
+                        <CardSection>
+                            <Image style={styles.imageStyle} source={{uri: "https://i.kym-cdn.com/photos/images/newsfeed/000/676/221/295.jpg"}} />  
+                        </CardSection>
+                        <CardSection>
+                            <Button onPress={() => firebase.auth().signOut()}>Log Out</Button>
+                        </CardSection>
+                    </Card>
+                ) 
             case false: 
                 return <LoginForm />
             default:
@@ -50,6 +59,11 @@ class App extends Component {
 const styles = {
     spinnerStyle: {
         padding: 100,
+    },
+    imageStyle: {
+        height: 400,
+        flex: 1,
+        width: null
     }
 }
 

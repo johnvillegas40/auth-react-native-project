@@ -22,7 +22,7 @@ const styles = {
         borderColor: '#a4c639',
         marginLeft: 5,
         marginRight: 5,
-        elevation: 10
+
     },
     textStyle: {
         alignSelf: 'center',

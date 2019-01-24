@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import firebase from '@firebase/app';
 import '@firebase/auth'
 import { Button, Card, CardSection, Input, Spinner } from './common';
@@ -46,6 +46,7 @@ class LoginForm extends Component {
 
     render() {
         return(
+            <View>
             <Card>
                 <CardSection>
                     <Input
@@ -64,14 +65,17 @@ class LoginForm extends Component {
                     onChangeText={password => this.setState({ password })} />
                 </CardSection>
 
-                <Text style={styles.errorTextStyle}>
-                    {this.state.error}
-                </Text>
-
+                
                 <CardSection>
                     {this.renderButton()}
                 </CardSection>
+
+                
             </Card>
+            <Text style={styles.errorTextStyle}>
+                    {this.state.error}
+                </Text>
+            </View>
         )
     }
 }
